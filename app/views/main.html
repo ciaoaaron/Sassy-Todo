@@ -1,0 +1,15 @@
+<div class="addItem">
+  <input type="text" ng-model="newItemName" co-enter="addItem( newItemName )" />
+</div>
+<ul ng-controller="ListCtrl">
+  <li class="" ng-repeat="item in todos track by item.uid" ng-controller="ListitemCtrl">
+    <input type="hidden" class="lid" value="{{id}}" ng-class="{hidden: hideId}" ng-init="uid = item.uid" ng-model="uid" />
+    <strong>{{item.name}}</strong>
+    {{item.timeStmp | date:'medium'}}
+    <a href="#" class="btn-done" ng-click="deleteItem()">d</a>
+  </li>
+</ul>
+
+<a href="#" ng-click="makeFile('test.txt')">FS - make</a>
+<a href="#" ng-click="readFile('test.txt')">FS - read</a>
+<a href="#" ng-click="removeFile('test.txt')">FS - remove</a>
